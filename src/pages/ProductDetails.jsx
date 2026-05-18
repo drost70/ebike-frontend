@@ -19,7 +19,7 @@ export default function ProductDetails() {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const res = await axios.get(`http://localhost:3001/api/products/${id}`);
+        const res = await axios.get(`https://ebike-api-server.onrender.com/api/products/${id}`);
         setProduct(res.data);
       } catch (error) { console.error(error); } 
       finally { setLoading(false); }

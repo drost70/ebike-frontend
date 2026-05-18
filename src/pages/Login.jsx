@@ -12,7 +12,7 @@ export default function Login() {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:3001/api/auth/login', { email, password });
+      const res = await axios.post('https://ebike-api-server.onrender.com/api/auth/login', { email, password });
       setAuth(res.data.user, res.data.token); // Зберігаємо дані в стор
       alert('Вхід успішний!');
       navigate('/admin'); // Перенаправляємо в адмінку

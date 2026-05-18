@@ -16,7 +16,7 @@ export default function Rental() {
   useEffect(() => {
     const fetchRentals = async () => {
       try {
-        const res = await axios.get('http://localhost:3001/api/products');
+        const res = await axios.get('https://ebike-api-server.onrender.com/api/products');
         setRentals(res.data.filter(p => p.type === 'rental'));
       } catch (err) { console.error(err); }
       finally { setLoading(false); }

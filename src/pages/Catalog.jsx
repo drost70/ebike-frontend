@@ -26,7 +26,7 @@ export default function Catalog() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await axios.get('http://localhost:3001/api/products');
+        const res = await axios.get('https://ebike-api-server.onrender.com/api/products');
         setProducts(res.data); 
       } catch (err) { console.error(err); }
       finally { setLoading(false); }

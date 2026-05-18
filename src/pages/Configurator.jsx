@@ -32,7 +32,7 @@ export default function Configurator() {
       const finalCity = needsShipping ? formData.city : 'Оренда (Без доставки)';
       const finalBranch = needsShipping ? formData.postBranch : '-';
 
-      await axios.post('http://localhost:3001/api/orders', { 
+      await axios.post('https://ebike-api-server.onrender.com/api/orders', { 
         ...formData, 
         city: finalCity, 
         postBranch: finalBranch,

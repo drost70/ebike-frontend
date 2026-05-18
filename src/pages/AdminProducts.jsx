@@ -22,7 +22,7 @@ export default function AdminProducts() {
 
   const fetchProducts = async () => {
     try {
-      const res = await axios.get('http://localhost:3001/api/products');
+      const res = await axios.get('https://ebike-api-server.onrender.com/api/products');
       setProducts(res.data);
     } catch (err) { console.error(err); }
   };
@@ -72,7 +72,7 @@ export default function AdminProducts() {
     try {
       if (editingId) {
         // РЕЖИМ РЕДАГУВАННЯ: відправляємо PUT-запит на ID товару
-        await axios.put(`http://localhost:3001/api/products/${editingId}`, data, {
+        await axios.put(`https://ebike-api-server.onrender.com/api/products/${editingId}`, data, {
           headers: { 
             Authorization: `Bearer ${token}`,
             'Content-Type': 'multipart/form-data'
@@ -81,7 +81,7 @@ export default function AdminProducts() {
         alert('✏️ Товар успішно оновлено!');
       } else {
         // РЕЖИМ СТВОРЕННЯ: відправляємо POST-запит
-        await axios.post('http://localhost:3001/api/products', data, {
+        await axios.post('https://ebike-api-server.onrender.com/api/products', data, {
           headers: { 
             Authorization: `Bearer ${token}`,
             'Content-Type': 'multipart/form-data'
@@ -103,7 +103,7 @@ export default function AdminProducts() {
     if (!confirmDelete) return;
 
     try {
-      await axios.delete(`http://localhost:3001/api/products/${id}`, {
+      await axios.delete(`https://ebike-api-server.onrender.com/api/products/${id}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       alert('🗑️ Товар успішно видалено!');

@@ -9,7 +9,7 @@ export default function AdminOrders() {
 
   const fetchOrders = async () => {
     try {
-      const res = await axios.get('http://localhost:3001/api/orders', {
+      const res = await axios.get('https://ebike-api-server.onrender.com/api/orders', {
         headers: { Authorization: `Bearer ${token}` }
       });
       setOrders(res.data);
@@ -27,7 +27,7 @@ export default function AdminOrders() {
   const handleStatusChange = async (orderId, newStatus) => {
     try {
       await axios.put(
-        `http://localhost:3001/api/orders/${orderId}`, 
+        `https://ebike-api-server.onrender.com/api/orders/${orderId}`, 
         { status: newStatus },
         { headers: { Authorization: `Bearer ${token}` } }
       );
